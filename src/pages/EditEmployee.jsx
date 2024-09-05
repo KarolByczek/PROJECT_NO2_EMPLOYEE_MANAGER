@@ -17,7 +17,7 @@ export function EditEmployee() {
   );
 
   const [inputValue4, setInputValue4] = useState(
-    data.birthdate.toDate().toLocaleDateString()
+    new Date(data.birthdate.seconds * 1000).toLocaleDateString('en-EU')
   );
 
   const editEmployee = (formdata) => {
