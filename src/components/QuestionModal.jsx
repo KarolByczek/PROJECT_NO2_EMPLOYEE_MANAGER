@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { collectionRef } from "../HomePage";
+import { collectionRef } from "../firebase";
 import { deleteDoc, doc } from "firebase/firestore";
 import React from "react";
 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { statusOptions } from "../AUXILIARY OBJECTS/statusoptions";
 import { t } from "i18next";
-import { collectionRef } from "../HomePage";
+import { collectionRef } from "../firebase";
 import { Timestamp, doc, updateDoc } from "firebase/firestore";
 
 export function EditEmployee() {
