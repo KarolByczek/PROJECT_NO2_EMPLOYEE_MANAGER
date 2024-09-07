@@ -5,11 +5,9 @@ import { AddEmployee } from './pages/AddEmployee';
 import { EditEmployee } from './pages/EditEmployee';
 import { EmployeeDetail } from './pages/EmployeeDetail';
 
-const basename = "/PROJECT_NO2_EMPLOYEE_MANAGER";
-
 function App() {
   return (
-    <HashRouter basename={basename}>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/add_form" element={<AddEmployee />} />
