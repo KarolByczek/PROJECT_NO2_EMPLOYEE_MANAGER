@@ -1,8 +1,8 @@
 import { Table } from "./components/Table";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { collectionRef } from "./firebase";
-import { onSnapshot } from "firebase/firestore";
+import { db } from "./firebase";
+import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import React from "react";
 
@@ -11,26 +11,15 @@ function App() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    function unsub() {
-      onSnapshot(
-        collectionRef,
-        (QuerySnapshot) => {
-          const items = [];
-          QuerySnapshot.forEach((doc) => {
-            console.log(doc.data()); // Add this to inspect the fetched data
-            items.push(doc.data());
-          });
-          setDbdata(items);
-        },
-        (error) => {
-          console.error("Error fetching Firestore data: ", error);
-        }
-      );
-    }
-    return () => {
-      unsub();
+    const fetchData = async () => {
+      const querySnapshot = await getDocs(collection(db, 'WORKERS_DATA'));
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, ' => ', doc.data());
+      });
     };
-  }, [setDbdata]);
+  
+    fetchData();
+  }, []);
 
   return (
     <div className="home_page">
