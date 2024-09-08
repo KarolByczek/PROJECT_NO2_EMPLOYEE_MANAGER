@@ -1,15 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './HomePage';
 import { AddEmployee } from './pages/AddEmployee';
 import { EditEmployee } from './pages/EditEmployee';
 import { EmployeeDetail } from './pages/EmployeeDetail';
 
-const basename = '/PROJECT_NO2_EMPLOYEE_MANAGER/';
 
 function App() {
   return (
-    <Router basename={basename}>
+    <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/add_form" element={<AddEmployee />} />
