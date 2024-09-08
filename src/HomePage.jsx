@@ -11,7 +11,7 @@ function App() {
   const { t } = useTranslation();
 
   useEffect(() => {
-    async function unsub() {
+    function unsub() {
       onSnapshot(
         collectionRef,
         (QuerySnapshot) => {
@@ -38,7 +38,7 @@ function App() {
         <div className="add_employee_link">{t("add_a_new")}</div>
       </Link>
       <h1>{t("employees")}</h1>
-      {dbdata.length > 0 ? <Table data={dbdata} /> : null}
+       <Table data={dbdata} />
     </div>
   );
 }
