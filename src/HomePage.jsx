@@ -38,7 +38,7 @@ function App() {
         <div className="add_employee_link">{t("add_a_new")}</div>
       </Link>
       <h1>{t("employees")}</h1>
-       <Table data={dbdata} />
+       {dbdata.length > 0 ? <Table data={dbdata} /> : null}
     </div>
   );
 }
