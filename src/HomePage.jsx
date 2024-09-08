@@ -30,7 +30,7 @@ function App() {
     return () => {
       unsub();
     };
-  }, [onSnapshot]);
+  }, [setDbdata]);
 
   return (
     <div className="home_page">
