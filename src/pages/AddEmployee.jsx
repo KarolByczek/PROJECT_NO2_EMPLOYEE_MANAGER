@@ -1,13 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { statusOptions } from "../AUXILIARY OBJECTS/statusoptions";
 import { useTranslation } from "react-i18next";
-import { collectionRef } from "../firebase";
-import { doc, setDoc, Timestamp } from "firebase/firestore";
+import { db } from "../firebase";
+import { doc, setDoc, Timestamp, collection } from "firebase/firestore";
 import React from "react";
 
 export function AddEmployee() {
+  const collectionRef = collection(db, "WORKERS_DATA");
   const navigate = useNavigate();
   const { t } = useTranslation();
+
 
   function makeEmployee(formdata) {
     return {

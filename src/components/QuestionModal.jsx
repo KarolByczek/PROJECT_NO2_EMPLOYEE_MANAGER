@@ -1,10 +1,11 @@
 import { useTranslation } from "react-i18next";
-import { collectionRef } from "../firebase";
-import { deleteDoc, doc } from "firebase/firestore";
+import { db } from "../firebase";
+import { deleteDoc, doc, collection } from "firebase/firestore";
 import React from "react";
 
 export const QuestionModal = (props) => {
   const { t } = useTranslation();
+  const collectionRef = collection(db, "WORKERS_DATA");
 
   async function onClickButton01(employee) {
     try {

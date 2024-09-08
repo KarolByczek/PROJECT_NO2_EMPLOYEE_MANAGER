@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { statusOptions } from "../AUXILIARY OBJECTS/statusoptions";
 import { t } from "i18next";
-import { collectionRef } from "../firebase";
-import { Timestamp, doc, updateDoc } from "firebase/firestore";
+import { db } from "../firebase";
+import { Timestamp, doc, updateDoc, collection } from "firebase/firestore";
 
 export function EditEmployee() {
   const location = useLocation();
@@ -21,6 +21,7 @@ export function EditEmployee() {
   );
 
   const editEmployee = (formdata) => {
+
     return {
       firstname: formdata.get("firstname"),
       lastname: formdata.get("lastname"),
@@ -40,6 +41,7 @@ export function EditEmployee() {
     const editedData = editEmployee(formData);
 
     try {
+      const collectionRef = collection(db, "WORKERS_DATA");
       const employeeRef = doc(collectionRef, refdoc.id);
       updateDoc(employeeRef, editedData);
     } catch (error) {
