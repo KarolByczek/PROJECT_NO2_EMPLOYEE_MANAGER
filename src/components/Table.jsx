@@ -187,6 +187,29 @@ export const Table = (props) => {
       <div className="employees_count">
         {t("employee_result", { count: filtereddata.length })}
       </div>
+      <div>
+        <p>
+          <strong>
+            {t("sorted_by")}
+            <span> </span>
+            {sortBy === "firstname" ? t("first_name") : null}
+            {sortBy === "lastname" ? t("last_name") : null}
+            {sortBy === "salary" ? t("salary") : null}
+            {sortBy === "status" ? t("status") : null}
+            {sortBy === "birthdate" ? t("birthdate") : null}
+            {sortBy === "none" ? t("none") : null}
+          </strong>
+        </p>
+        <p>
+          <strong>
+            {t("sorting_direction")}
+            <span> </span>
+            {sortDirection === "default" ? t("default") : null}
+            {sortDirection === "ascending" ? t("ascending") : null}
+            {sortDirection === "descending" ? t("descending") : null}
+          </strong>
+        </p>
+      </div>
       <div className="sorting_by">{t("sort_employees_by")}:</div>
       <div className="sorting_by_other">{t("sort_employees_by_other")}:</div>
       <table className="table">
@@ -280,29 +303,6 @@ export const Table = (props) => {
           })}
         </tbody>
       </table>
-      <div>
-        <p>
-          <strong>
-            {t("sorted_by")}
-            <span> </span>
-            {sortBy === "firstname" ? t("first_name") : null}
-            {sortBy === "lastname" ? t("last_name") : null}
-            {sortBy === "salary" ? t("salary") : null}
-            {sortBy === "status" ? t("status") : null}
-            {sortBy === "birthdate" ? t("birthdate") : null}
-            {sortBy === "none" ? t("none") : null}
-          </strong>
-        </p>
-        <p>
-          <strong>
-            {t("sorting_direction")}
-            <span> </span>
-            {sortDirection === "default" ? t("default") : null}
-            {sortDirection === "ascending" ? t("ascending") : null}
-            {sortDirection === "descending" ? t("descending") : null}
-          </strong>
-        </p>
-      </div>
     </>
   );
 };

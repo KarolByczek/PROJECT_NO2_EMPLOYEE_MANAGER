@@ -25,11 +25,18 @@ body {
   width: fit-content;
   font-weight: bold;
   font-size: larger;
-  border: 1rem solid rgb(173, 175, 52);
-  border-radius: 0.4rem;
+  border: 0.4rem solid rgb(173, 175, 52);
+  border-radius: 0.5rem;
   background-color: rgb(106, 122, 68);
   color: black;
+  
   padding: 0.6rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
+
+.add_employee_link:hover {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
