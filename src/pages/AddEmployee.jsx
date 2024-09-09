@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { statusOptions } from "../AUXILIARY OBJECTS/statusoptions";
 import { useTranslation } from "react-i18next";
 import { db } from "../firebase";
@@ -90,6 +90,7 @@ export function AddEmployee() {
         </label>
         <button type="submit">{t("add_button")}</button>
       </form>
+      <Link className="add_return_button" to={"/"}>{t("return")}</Link>
     </div>
   );
 }

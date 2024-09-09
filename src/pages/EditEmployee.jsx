@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { statusOptions } from "../AUXILIARY OBJECTS/statusoptions";
 import { t } from "i18next";
 import { db } from "../firebase";
@@ -12,23 +12,18 @@ export function EditEmployee() {
   console.log(data);
   const [inputValue0, setInputValue0] = useState(data.firstname);
   const [inputValue1, setInputValue1] = useState(data.lastname);
-  const [inputValue2, setInputValue2] = useState(
-    data.salary.toString()
-  );
+  const [inputValue2, setInputValue2] = useState(data.salary.toString());
 
   const [inputValue4, setInputValue4] = useState(
-    new Date(data.birthdate.seconds * 1000).toLocaleDateString('en-EU')
+    new Date(data.birthdate.seconds * 1000).toLocaleDateString("en-EU")
   );
 
   const editEmployee = (formdata) => {
-
     return {
       firstname: formdata.get("firstname"),
       lastname: formdata.get("lastname"),
-      salary: +(formdata.get("salary")),
-      birthdate: Timestamp.fromDate(
-        new Date(formdata.get("birthdate"))
-      ),
+      salary: +formdata.get("salary"),
+      birthdate: Timestamp.fromDate(new Date(formdata.get("birthdate"))),
       club_member: Boolean(formdata.get("club_member")),
       status: formdata.get("status"),
       car_owner: Boolean(formdata.get("car_owner")),
@@ -134,6 +129,10 @@ export function EditEmployee() {
         </label>
         <button type="submit">{t("save_edited")}</button>
       </form>
+      
+      <Link className="edit_return_button" to={"/"}>
+        {t("return")}
+      </Link>
     </div>
   );
 }
