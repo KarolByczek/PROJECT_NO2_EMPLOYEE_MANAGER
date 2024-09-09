@@ -234,11 +234,19 @@ p strong {
     flex-direction: column;
     align-items: center;
     margin-top: 3rem;
-    text-decoration: none;
-    background-color: #8fec24;
-    border: 0.2rem solid greenyellow;
     width: fit-content;
-    padding: 0.4rem;
+    color: bisque;
+    font-family: "Courier New", Courier, monospace;
+    background-color: rgb(130, 50, 50);
+    padding: 0.5rem;
+    border: 0.2rem solid black;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .add_return_button:hover {
+    border: 0.2rem solid bisque;
   }
 }
 
@@ -340,11 +348,21 @@ p strong {
 
   .edit_return_button {
     margin-top: 2rem;
-    text-decoration: none;
     background-color: #8fec24;
     border: 0.2rem solid greenyellow;
     width: fit-content;
-    padding: 0.4rem;
+    color: bisque;
+    font-family: "Courier New", Courier, monospace;
+    background-color: rgb(130, 50, 50);
+    padding: 0.5rem;
+    border: 0.2rem solid black;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .edit_return_button:hover {
+    border: 0.2rem solid bisque;
   }
 }
 
